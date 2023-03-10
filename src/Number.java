@@ -13,9 +13,10 @@ public class Number {
 		} while (!resp.equals("d") && !resp.equals("b"));
 		
 		System.out.print("Number to convert: ");
-		long num = sc.nextLong();
+		String str = sc.next();
 		
 		if (resp.equals("d")) { // dec to bin
+			long num = sc.nextLong();
 			String bin = "";
 			
 			while (num > 0) {
@@ -28,8 +29,7 @@ public class Number {
 		} else { // bin to dec
 			long sum = 0;
 			
-			String digits = Long.toString(num);
-			StringBuilder sb = new StringBuilder(digits);
+			StringBuilder sb = new StringBuilder(str);
 			char[] charArray = sb.reverse().toString().toCharArray();
 			
 			for (int p = 0; p < charArray.length; p++) {
